@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+import AddToWatchlistIcon from "../components/cardIcons/addToWatchlist";
 
 export const MoviesContext = React.createContext(null);
 
 const MoviesContextProvider = (props) => {
   const [favourites, setFavourites] = useState( [] )
   const [myReviews, setMyReviews] = useState( {} )
-
+  const [watchlist, setWatchlist] = useState( [] )
 
   const addToFavourites = (movie) => {
     let newFavourites = [];
@@ -29,6 +30,16 @@ const MoviesContextProvider = (props) => {
     setMyReviews( {...myReviews, [movie.id]: review } )
   };
   //console.log(myReviews);
+  const addToWatchlist = (movie) => {
+    let newWatchlist = [];
+    if (!watchlist.includes(movie.id)){
+      newWatchlist = [...watchlist, movie.id];
+    }
+    else{
+      newWatchlist = [...watchlist];
+    }
+    setWatchlist(newWatchlist)
+  };
 
 
   return (
@@ -38,6 +49,8 @@ const MoviesContextProvider = (props) => {
         addToFavourites,
         removeFromFavourites,
         addReview,
+        addToWatchlist,
+        watchlist,
       }}
     >
       {props.children}

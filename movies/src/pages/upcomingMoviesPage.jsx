@@ -6,19 +6,25 @@ import Spinner from "../components/spinner";
 import AddToWatchListIcon from "../components/cardIcons/addToWatchlist";
 
 const UpcomingMoviesPage = () => {
-  const { data, error, isLoading, isError } = useQuery({
+  const { data, error, isPending, isError } = useQuery({
   queryKey: ["upcoming"],
   queryFn: getUpcomingMovies,
 });
 
-  if (isLoading) return <Spinner />;
-  if (isError) return <h1>{error.message}</h1>;
+  if (isPending) {
+    return <Spinner />};
+
+  if (isError) {
+    return <h1>{error.message}</h1>};
+
+  const movies = data;
 
   return (
     <PageTemplate
       title="Upcoming Movies"
       movies={data}
-      action={(movie) => <AddToWatchListIcon movie={movie} />}
+      action={(movie) => 
+        {return <AddToWatchListIcon movie={movie} />;}}
     />
   );
 };

@@ -28,11 +28,22 @@ export default function MovieCard({ movie, action }) {
     movie.favourite = false
   }
 
+    const { watchlist, addToWatchlist } = useContext(MoviesContext);
+  if (watchlist.find((id) => id === movie.id)) {
+    movie.watchlist = true;
+  } else {
+    movie.watchlist = false
+  }
+
   const handleAddToFavorite = (e) => {
     e.preventDefault();
     addToFavourites(movie);
   };
 
+const handleAddToWatchlist = (e) => {
+    e.preventDefault();
+    addToWatchlist(movie);
+  }
 
 
   return (
@@ -45,6 +56,9 @@ export default function MovieCard({ movie, action }) {
             </Avatar>
           ) : null
         }
+
+        
+
         title={
           <Typography variant="h5" component="p">
             {movie.title}{" "}
@@ -91,3 +105,4 @@ export default function MovieCard({ movie, action }) {
     </Card>
   );
 }
+

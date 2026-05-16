@@ -20,7 +20,7 @@ const FavouriteMoviesPage = () => {
     })
   });
   
-  // Check if any of the parallel queries is still loading.
+  
   const isPending = favouriteMovieQueries.find((m) => m.isPending === true);
 
   if (isPending) {

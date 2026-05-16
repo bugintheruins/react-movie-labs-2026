@@ -21,7 +21,7 @@ const formControl =
   {
     margin: 1,
     minWidth: "90%",
-    backgroundColor: "rgb(255, 255, 255)"
+    backgroundColor: "rgb(193, 210, 230)"
   };
 
 export default function FilterMoviesCard(props) {
@@ -61,17 +61,18 @@ export default function FilterMoviesCard(props) {
   return (
     <Card 
       sx={{
-        backgroundColor: "rgb(204, 204, 0)"
+        backgroundColor: "rgb(95, 85, 153)"
       }} 
       variant="outlined">
       <CardContent>
         <Typography variant="h5" component="h1">
-          <SearchIcon fontSize="large" />
+          <SearchIcon fontSize="large"  />
           Filter the movies.
         </Typography>
             <TextField
       sx={{...formControl}}
       id="filled-search"
+     
       label="Search field"
       type="search"
       variant="filled"

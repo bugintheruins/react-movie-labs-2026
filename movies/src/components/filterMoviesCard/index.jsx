@@ -13,6 +13,7 @@ import img from '../../images/pexels-dziana-hasanbekava-5480827.jpg'
 import { getGenres } from "../../api/tmdb-api";
 import { useQuery } from '@tanstack/react-query';
 import Spinner from '../spinner';
+import { href } from "react-router";
 
 
 
@@ -107,13 +108,13 @@ export default function FilterMoviesCard(props) {
       </CardContent>
       <CardMedia
         sx={{ height: 300 }}
-        image={img}
+        image={"https://img.magnific.com/premium-photo/flying-popcorn-3d-glasses-film-reel-clapboard-yellow-background-cinema-movie-concept-3d_989822-1302.jpg?semt=ais_hybrid&w=740&q=80"}
         title="Filter"
       />
       <CardContent>
         <Typography variant="h5" component="h1">
           <SearchIcon fontSize="large" />
-          Filter the movies.
+          Find your taste!
           <br />
         </Typography>
       </CardContent>

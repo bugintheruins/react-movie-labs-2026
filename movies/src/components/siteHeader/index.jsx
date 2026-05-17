@@ -44,9 +44,9 @@ const SiteHeader = () => {
 
   return (
     <>
-      <AppBar position="fixed" color="secondary">
+      <AppBar position="absolute" sx={{ backgroundColor: "rgb(34, 30, 96)" }}>
         <Toolbar>
-          <Typography variant="h4" sx={{ flexGrow: 1 }}>
+          <Typography variant="h3" sx={{ flexGrow: 1 }}>
             Movies
           </Typography>
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
@@ -59,7 +59,7 @@ const SiteHeader = () => {
                   aria-controls="menu-appbar"
                   aria-haspopup="true"
                   onClick={handleMenu}
-                  color="inherit"
+                  sx={{ color: "rgb(228, 145, 195)" }}
                 >
                   <MenuIcon />
                 </IconButton>
@@ -68,12 +68,12 @@ const SiteHeader = () => {
                   anchorEl={anchorEl}
                   anchorOrigin={{
                     vertical: "top",
-                    horizontal: "right",
+                    horizontal: "left",
                   }}
                   keepMounted
                   transformOrigin={{
                     vertical: "top",
-                    horizontal: "right",
+                    horizontal: "left",
                   }}
                   open={open}
                   onClose={() => setAnchorEl(null)}
@@ -91,9 +91,9 @@ const SiteHeader = () => {
             ) : (
               <>
                 {menuOptions.map((opt) => (
-                  <Button
+                  <Button variant="contained"
                     key={opt.label}
-                    color="inherit"
+                    sx={{ backgroundColor: "rgb(98, 48, 108)", color: "white" }}
                     onClick={() => handleMenuSelect(opt.path)}
                   >
                     {opt.label}

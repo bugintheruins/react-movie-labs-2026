@@ -47,7 +47,7 @@ const handleAddToWatchlist = (e) => {
 
 
   return (
-    <Card>
+    <Card sx={{ borderRadius: "20px", backgroundColor: "rgb(220, 202, 228)" }}>
             <CardHeader
         avatar={
           movie.favourite ? (
@@ -67,7 +67,7 @@ const handleAddToWatchlist = (e) => {
       />
 
       <CardMedia
-        sx={{ height: 500 }}
+        sx={{ borderRadius: "20px", height: 500 }}
         image={
           movie.poster_path
             ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`

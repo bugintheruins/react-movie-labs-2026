@@ -21,7 +21,8 @@ const formControl =
   {
     margin: 1,
     minWidth: "90%",
-    backgroundColor: "rgb(193, 210, 230)"
+    borderRadius: "10px",
+    backgroundColor: "rgb(208, 224, 241)"
   };
 
 export default function FilterMoviesCard(props) {
@@ -30,6 +31,8 @@ export default function FilterMoviesCard(props) {
     queryKey: ['genres'],
     queryFn: getGenres,
   });
+ 
+  
 
   if (isPending) {
     return <Spinner />;
@@ -41,6 +44,7 @@ export default function FilterMoviesCard(props) {
   const genres = data.genres;
   if (genres[0].name !== "All"){
     genres.unshift({ id: "0", name: "All" });
+
   }
 
   const handleChange = (e, type, value) => {
@@ -55,8 +59,6 @@ export default function FilterMoviesCard(props) {
   const handleGenreChange = (e) => {
     handleChange(e, "genre", e.target.value);
   };
-
-
 
   return (
     <Card 
@@ -99,6 +101,9 @@ export default function FilterMoviesCard(props) {
             })}
           </Select>
         </FormControl>
+        
+        
+       
       </CardContent>
       <CardMedia
         sx={{ height: 300 }}
